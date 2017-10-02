@@ -1,0 +1,48 @@
+#!/bin/bash
+
+###########################
+### REFERENCES ###
+# - https://lede-project.org/docs/user-guide/imagebuilder
+# - https://wiki.openwrt.org/doc/howto/obtain.firmware.generate
+
+############################
+### CONFIGURATION ###
+## edit custom variables in 'config.bash'
+
+#name of the script
+SCRIPTNAME="${0##*/}"
+
+## source the custom variables
+. config.bash
+
+############################
+###### FUNCTIONS #####
+
+## source all functions files
+for f in functions/*.bash ; do . "$f" ; done
+
+############################
+### MAIN ###
+
+## parse command line options and commands:
+while true; do
+    case "$1" in
+        '') echo -e "\n$SCRIPTNAME: no arguments supplied"; usage; exit 0;;
+        -h|--help) usage; exit 0;;
+        -d|--download) download; exit 0;;
+        -i|--img-info) getinfo; exit 0;;
+        -n|--new-img) isthereanewimgbuilder; exit 0;;
+        -s|--sha256check) sha256check; exit 0;;
+        -q|--query-repos) shift; queryrepos "$1"; exit 0;;
+        -e|--extract) extract; exit 0;;
+        -f|--copy-files) copyconffiles; exit 0;;
+        -m|--make-image) CUSTOMCFG="true"; makeme; exit 0;;
+        -k|--make-clean) CUSTOMCFG="false"; makeme; exit 0;;
+        -b|--backup-img) backupimg; exit 0;;
+        -z|--zap-img-files) zapfiles; exit 0;;
+        -a|--run-all) FORCE="true"; zapfiles; download; extract; copyconffiles; CUSTOMCFG="true"; makeme; exit 0;;
+        -c|--run-clean) FORCE="true"; zapfiles; download; extract; copyconffiles; CUSTOMCFG="false"; makeme; exit 0;;
+        *) echo; echo "$SCRIPTNAME: unknown command '$1'"; echo; exit 127;;
+    esac
+done
+

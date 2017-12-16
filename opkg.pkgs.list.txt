@@ -122,6 +122,7 @@ iftop
 ip-full
 ipset
 lftp
+logrotate
 luci
 luci-app-adblock
 luci-app-clamav
@@ -134,6 +135,7 @@ luci-app-vpnbypass
 luci-app-watchcat
 luci-base
 luci-ssl-openssl
+luci-proto-wireguard
 miniupnpd
 msmtp
 msmtp-mta

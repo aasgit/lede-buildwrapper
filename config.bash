@@ -15,21 +15,22 @@ TELEPHONY="https://downloads.lede-project.org/snapshots/packages/arm_cortex-a9_v
 ### YOU MAY CHANGE THESE:
 LEDEIMGBUILD_TARG="mvebu" # change this to your target architecture
 PROFILE="linksys-wrt3200acm" # change this to your router profile
-PACKAGESLIST="opkg.pkgs.list.txt" # change this to a list of custom packages to install
 BUILDER="cga" # change this for a builder name (will show in generated images)
-FILES="files/" # config files directory to include
 ######################################################
 
 #######################################################
     ### DO NOT EDIT VARIABLES UNDER THIS LINE ###
 #######################################################
-
+# list of custom packages to install
+PACKAGESLIST="opkg.pkgs.list.txt"
+# config files directory to include
+FILES="files/"
 #snapshots URL
 LEDEIMGBUILD_URLS="https://downloads.lede-project.org/snapshots/targets/$LEDEIMGBUILD_TARG/generic/"
 # Image Builder file to download
-LEDEIMGBUILD_FILE="lede-imagebuilder-$LEDEIMGBUILD_TARG.Linux-x86_64.tar.xz"
+LEDEIMGBUILD_FILE="openwrt-imagebuilder-$LEDEIMGBUILD_TARG.Linux-x86_64.tar.xz"
 # Image Builder dir
-LEDEIMGBUILD_DIRS="lede-imagebuilder-$LEDEIMGBUILD_TARG.Linux-x86_64"
+LEDEIMGBUILD_DIRS="openwrt-imagebuilder-$LEDEIMGBUILD_TARG.Linux-x86_64"
 # force zapfiles defaults to false
 FORCE="false"
 # custom config files (previously saved to '$FILES')

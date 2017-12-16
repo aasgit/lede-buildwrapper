@@ -14,7 +14,7 @@ copyconffiles() {
         else
             read -p "Do you want to overwrite the files directory? [y/N]  "
                 case $REPLY in
-                    [Yy]) rm -rf $LEDEIMGBUILD_DIRS/$FILES/*; \cp -af $FILES $LEDEIMGBUILD_DIRS/; echo -e "\nDone!!!\n"; exit 3;;
+                    [Yy]) \cp -af $FILES $LEDEIMGBUILD_DIRS/; echo -e "\nDone!!!\n"; exit 3;;
                     *) echo -e "\nNo files were overwritten\n"; exit 5;;
                 esac
         fi

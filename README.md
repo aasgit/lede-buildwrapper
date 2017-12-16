@@ -8,5 +8,5 @@ Although I personally use this script regularly to automate builds for my WRT320
 
 ## LICENSE
 
-This script is Free Software, it's licensed under the GPLv2 and has ABSOLUTELY NO WARRANTY. You can find and read the complete version of the GPLv2 [here.](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) A LICENSE file containing a verbatim copy of the GPLv2 is included in this package.
+This script is Free Software, it's licensed under the GPLv3 and has ABSOLUTELY NO WARRANTY. You can find and read the complete version of the GPLv3 [here.](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) A LICENSE file containing a verbatim copy of the GPLv3 is included in this package.
 
